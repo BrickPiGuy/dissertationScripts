@@ -36,3 +36,5 @@ Final Notes
 - Trials may take 30–45 hours depending on cooling and token size.
 - Monitor logs via the terminal or redirect output to a log file.
 - Data analysis requires scipy, statsmodels, and pingouin libraries.
+
+[![DOI](https://zenodo.org/badge/986691745.svg)](https://doi.org/10.5281/zenodo.15468658)
