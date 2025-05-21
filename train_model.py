@@ -126,6 +126,8 @@ def train_model(tokens: int, trial_number: int, output_dir: Path) -> dict:
         "parameter_perplexity": parameter_perplexity
     })
 
+    gc.collect()  # prompt garbage collection after each trial
+
     return {
         "status": "success",
         "accuracy": accuracy,
