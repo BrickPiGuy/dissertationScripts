@@ -8,6 +8,7 @@ import math
 from pathlib import Path
 from datetime import datetime
 import csv
+import gc
 
 def get_model(model_name="openlm-research/open_llama_7b"):
     return AutoModelForCausalLM.from_pretrained(model_name)
