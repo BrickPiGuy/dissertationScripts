@@ -18,7 +18,11 @@ source ~/openllama_env/bin/activate
 
 Use the setup_sd_card_mount.sh script to mount and use a microSD card for cache storage. This improves performance and avoids filling internal storage.
 
-3. Training Script: train_model.py
+2. (Optional) SSD Setup
+
+Use the setup_openllama_ssd.sh script to mount and use a SSD for cache storage. This also improves performance and avoids filling internal storage.
+
+4. Training Script: train_model.py
 
 This script trains the OpenLLaMA model for 3 epochs using TinyStories data. It logs results to both results.txt (per trial) and run_log.csv (cumulative).
 
