@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 echo "🔧 Updating and upgrading system packages..."
 sudo apt update && sudo apt upgrade -y
@@ -14,7 +14,7 @@ echo "⬆️ Upgrading pip and installing Python packages..."
 pip install --upgrade pip
 
 echo "🔥 Installing JetPack-compatible PyTorch + torchvision..."
-pip install torch==2.0.0+nv23.05 torchvision==0.15.1+nv23.05 -f https://developer.download.nvidia.com/compute/redist/jp/v51
+pip install torch==2.0.0+nv23.05 torchvision==0.15.1+nv23.05 -f https://developer.download.nvidia.com/compute/redist/jp/v51/pytorch/
 
 echo "🧠 Installing Hugging Face libraries..."
 pip install transformers datasets tokenizers accelerate
@@ -32,4 +32,12 @@ echo "🔍 Installing NVIDIA Nsight tools and monitoring..."
 sudo apt install -y nvidia-nsight nvidia-nsight-systems
 pip install nvitop
 
-echo "✅ Environment setup complete. Run: source ~/openllama_env/bin/activate"
+echo "📂 Cloning OpenLLaMA repository..."
+git clone https://github.com/openlm-research/open_llama.git ~/open_llama
+cd ~/open_llama
+pip install -r requirements.txt
+
+echo "✅ Environment setup complete."
+echo "💡 To activate this environment later, run:"
+echo "source ~/openllama_env/bin/activate"
+
