@@ -12,13 +12,13 @@ import pingouin as pg
 data = pd.read_csv("results/run_log.csv")
 
 # Check if required columns are present
-required_columns = {'trial_number', 'token_count', 'parameter_efficiency_loss'}
+required_columns = {'trial_number', 'token_count', 'parameter_efficiency'}
 if not required_columns.issubset(data.columns):
     raise ValueError(f"Missing required columns: {required_columns - set(data.columns)}")
 
 # === Step 2: Run Repeated-Measures ANOVA for parameter_efficiency_loss ===
-anova_loss = AnovaRM(data, depvar='parameter_efficiency_loss', subject='trial_number', within=['token_count']).fit()
-print("\nRepeated-Measures ANOVA on Parameter Efficiency Loss:")
+anova_loss = AnovaRM(data, depvar='parameter_efficiency', subject='trial_number', within=['token_count']).fit()
+print("\nRepeated-Measures ANOVA on Parameter Efficiency:")
 print(anova_loss)
 
 # === Check ANOVA p-value significance ===
